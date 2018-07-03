@@ -1,10 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Results.css';
 
-const Results = (props) => (
+const Results = ({results, ...props}) => (
   <div {...props}>
-    <pre>Results go here</pre>
+    <code>{JSON.stringify(results)}</code>
   </div>
 );
+
+Results.propTypes = {
+  results: PropTypes.array.isRequired,
+};
 
 export default Results;

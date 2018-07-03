@@ -1,5 +1,5 @@
 import React from 'react';
-import Results from './Results';
+import Results from '../containers/Results';
 import './App.css';
 
 const App = (props) => (

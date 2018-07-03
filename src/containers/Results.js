@@ -1,9 +1,7 @@
 import React from 'react';
-import basicComponentTests from '../basicComponentTests';
-import { shallow } from 'enzyme';
-import Results from './Results';
+import Results from '../components/Results';
 
-const results = [{
+const results =  [{
   "price": "$726,500",
   "agency": {
       "brandingColors": {
@@ -23,20 +21,20 @@ const results = [{
   },
   "id": "2",
   "mainImage": "http://i1.au.reastatic.net/640x480/88586227f9176f602d5c19cf06261108dbb29f03e30d1c4ce9fc2b51fb1e4bd6/main.jpg"
+}, {
+  "price": "$826,500",
+  "agency": {
+      "brandingColors": {
+          "primary": "#57B5E0"
+      },
+      "logo": "http://i1.au.reastatic.net/agencylogo/XCEWIN/12/20150807093203.gif"
+  },
+  "id": "3",
+  "mainImage": "http://i4.au.reastatic.net/640x480/98cee1b2a3a64329921fc38f7e2926a78d41fcc683fc48fb8a8ef2999b14c027/main.jpg"
 }];
 
-basicComponentTests(<Results results={[]} />);
+const ResultsContainer = (props) => (
+  <Results {...props} results={results}  />
+);
 
-describe('with no results', () => {
-  it('renders no properties', () => {
-    const wrapper = shallow(<Results results={[]} />);
-    expect(wrapper).toMatchSnapshot();
-  });
-});
-
-describe('with some results', () => {
-  it('renders the properties in the results', () => {
-    const wrapper = shallow(<Results results={results} />);
-    expect(wrapper).toMatchSnapshot();
-  });
-});
+export default ResultsContainer;
