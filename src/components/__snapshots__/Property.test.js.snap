@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the property with image and price 1`] = `
+<div
+  className="Property"
+>
+  <img
+    className="Property-image"
+    src="http://i2.au.reastatic.net/640x480/20bfc8668a30e8cabf045a1cd54814a9042fc715a8be683ba196898333d68cec/main.jpg"
+  />
+  <div
+    className="Property-price"
+  >
+    $726,500
+  </div>
+</div>
+`;
