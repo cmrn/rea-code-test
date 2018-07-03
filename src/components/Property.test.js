@@ -17,7 +17,7 @@ const property = {
 
 basicComponentTests(<Property property={property} />);
 
-it('renders the property with image and price', () => {
+it('renders the property with image, agency, and price', () => {
   const wrapper = shallow(<Property property={property} />);
   expect(wrapper).toMatchSnapshot();
 });
