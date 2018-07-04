@@ -21,6 +21,7 @@ class Results extends React.Component {
         properties={this.state.results} 
         title='Results' 
         hoverContent={<div>Save</div>}
+        onClick={(id) => console.log(id)}
       />
     );
   }

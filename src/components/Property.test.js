@@ -32,6 +32,22 @@ describe('when hover content is provided', () => {
     expect(wrapper.find('.Property-hover').length).toEqual(1);
     expect(wrapper.find('.Property-hover').text()).toEqual('something');
   });
+
+  describe('and a click handler is provided', () => {
+    it('calls the click handler when hover is clicked', () => {
+      const clickHandler = jest.fn();
+      const wrapper = shallow(<Property {...dummyProps} hoverContent='something' onClick={clickHandler} />);
+      wrapper.find('.Property-hover').simulate('click');
+      expect(clickHandler.mock.calls.length).toEqual(1);
+    });
+  });
+
+  describe('but no click handler', () => {
+    it('does not error when clicked', () => {
+      const wrapper = shallow(<Property {...dummyProps} hoverContent='something' />);
+      wrapper.find('.Property-hover').simulate('click');
+    });
+  });
 });
 
 describe('when there is no hover content', () => {

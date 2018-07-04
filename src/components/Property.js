@@ -8,12 +8,16 @@ const AgencyBanner = ({color, logo}) => (
   </div>
 );
 
-const Property = ({ property, className, hoverContent, ...props }) => (
+const Property = ({ property, className, hoverContent, onClick, ...props }) => (
   <div className={cnames('Property', className)} {...props}>
     <AgencyBanner logo={property.agency.logo} color={property.agency.brandingColors.primary} />
     <img className='Property-image' src={property.mainImage} />
     <div className='Property-price'>{property.price}</div>
-    { hoverContent ? <div className='Property-hover'>{hoverContent}</div> : null }
+    { hoverContent ? 
+      <div className='Property-hover' onClick={() => { if(onClick) onClick(property.id) }}>
+        {hoverContent}
+      </div>
+    : null }
   </div>
 );
 
