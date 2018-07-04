@@ -43,11 +43,16 @@ it('calls getResults on the API when mounted', () => {
 
 it('passes an empty results array before api promise resolves', () => {
   const wrapper = shallow(<Results />);
-  expect(wrapper.props().results).toEqual([]);
+  expect(wrapper.props().properties).toEqual([]);
 });
 
 it('passes the results list after api promise resolves', async () => {
   const wrapper = shallow(<Results />);
   await dataPromise; 
-  expect(wrapper.update().props().results).toEqual(data);
+  expect(wrapper.update().props().properties).toEqual(data);
+});
+
+it('sets the title prop to Results', () => {
+  const wrapper = shallow(<Results />);
+  expect(wrapper.update().props().title).toEqual('Results');
 });

@@ -1,9 +1,9 @@
 import React from 'react';
-import Results from '../components/Results';
+import PropertyList from '../components/PropertyList';
 import { getResults } from '../api';
 
 
-class ResultsContainer extends React.Component {
+class Results extends React.Component {
   constructor(props) {
     super(props);
     this.state = { results: [] };
@@ -16,9 +16,13 @@ class ResultsContainer extends React.Component {
 
   render() {
     return (
-      <Results {...this.props} results={this.state.results}  />
+      <PropertyList 
+        {...this.props} 
+        properties={this.state.results} 
+        title='Results' 
+      />
     );
   }
 };
 
-export default ResultsContainer;
+export default Results;

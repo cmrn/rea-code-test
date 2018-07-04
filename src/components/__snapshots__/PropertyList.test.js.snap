@@ -1,22 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`with no results renders no properties 1`] = `
+exports[`with no properties renders no properties 1`] = `
 <div>
   <h2
-    className="Results-title"
-  >
-    Results
-  </h2>
+    className="PropertyList-title"
+  />
 </div>
 `;
 
-exports[`with some results renders the properties in the results 1`] = `
+exports[`with some properties renders each property 1`] = `
 <div>
   <h2
-    className="Results-title"
-  >
-    Results
-  </h2>
+    className="PropertyList-title"
+  />
   <Property
     key="1"
     property={

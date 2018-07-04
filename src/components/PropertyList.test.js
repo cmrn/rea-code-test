@@ -1,9 +1,14 @@
 import React from 'react';
 import basicComponentTests from '../basicComponentTests';
 import { shallow } from 'enzyme';
-import Results from './Results';
+import PropertyList from './PropertyList';
 
-const results = [{
+const dummyProps = {
+  properties: [],
+  title: '',
+};
+
+const properties = [{
   "price": "$726,500",
   "agency": {
       "brandingColors": {
@@ -25,18 +30,23 @@ const results = [{
   "mainImage": "http://i1.au.reastatic.net/640x480/88586227f9176f602d5c19cf06261108dbb29f03e30d1c4ce9fc2b51fb1e4bd6/main.jpg"
 }];
 
-basicComponentTests(<Results results={[]} />);
+basicComponentTests(<PropertyList {...dummyProps} />);
 
-describe('with no results', () => {
+it('renders list title', () => {
+  const wrapper = shallow(<PropertyList {...dummyProps} title='Something' />);
+  expect(wrapper.find('h2').text()).toEqual('Something');
+});
+
+describe('with no properties', () => {
   it('renders no properties', () => {
-    const wrapper = shallow(<Results results={[]} />);
+    const wrapper = shallow(<PropertyList {...dummyProps} properties={[]} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
 
-describe('with some results', () => {
-  it('renders the properties in the results', () => {
-    const wrapper = shallow(<Results results={results} />);
+describe('with some properties', () => {
+  it('renders each property', () => {
+    const wrapper = shallow(<PropertyList {...dummyProps} properties={properties} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
