@@ -15,9 +15,28 @@ const property = {
   "mainImage": "http://i2.au.reastatic.net/640x480/20bfc8668a30e8cabf045a1cd54814a9042fc715a8be683ba196898333d68cec/main.jpg"
 };
 
-basicComponentTests(<Property property={property} />);
+const dummyProps = {
+  property: property,
+}
+
+basicComponentTests(<Property {...dummyProps} />);
 
 it('renders the property with image, agency, and price', () => {
-  const wrapper = shallow(<Property property={property} />);
+  const wrapper = shallow(<Property {...dummyProps} />);
   expect(wrapper).toMatchSnapshot();
+});
+
+describe('when hover content is provided', () => {
+  it('renders the hover div with content', () => {
+    const wrapper = shallow(<Property {...dummyProps}  hoverContent='something' />);
+    expect(wrapper.find('.Property-hover').length).toEqual(1);
+    expect(wrapper.find('.Property-hover').text()).toEqual('something');
+  });
+});
+
+describe('when there is no hover content', () => {
+  it('does not render render the hover div', () => {
+    const wrapper = shallow(<Property {...dummyProps} />);
+    expect(wrapper.find('.Property-hover').length).toEqual(0);
+  });
 });

@@ -20,6 +20,7 @@ class Results extends React.Component {
         {...this.props} 
         properties={this.state.results} 
         title='Results' 
+        hoverContent={<div>Save</div>}
       />
     );
   }
