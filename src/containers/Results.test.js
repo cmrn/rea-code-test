@@ -15,5 +15,13 @@ it('passes the results ID list from the store', async () => {
 
 it('sets the title prop to Results', () => {
   const wrapper = shallow(<Results />);
-  expect(wrapper.update().props().title).toEqual('Results');
+  expect(wrapper.props().title).toEqual('Results');
+});
+
+it('calls save method when a property is clicked', () => {
+  propertyStore.save = jest.fn();
+  const wrapper = shallow(<Results />);
+  expect(propertyStore.save.mock.calls.length).toEqual(0);
+  wrapper.simulate('click');
+  expect(propertyStore.save.mock.calls.length).toEqual(1);
 });

@@ -43,4 +43,18 @@ describe('load', () => {
     mockApiData.saved.forEach(p => expect(propertyStore.saved).toContain(p.id));
     expect(propertyStore.saved.length).toEqual(mockApiData.saved.length);
   });
-})
+});
+
+describe('save', () => {
+  it('adds the ID to the saved list', () => {
+    propertyStore.saved = ['1', '2'];
+    propertyStore.save('3');
+    expect(propertyStore.saved[2]).toEqual('3');
+  });
+  
+  it('does not add the ID if it is already saved', () => {
+    propertyStore.saved = ['1', '2'];
+    propertyStore.save('1');
+    expect(propertyStore.saved.length).toEqual(2);
+  })
+});

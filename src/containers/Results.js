@@ -9,7 +9,7 @@ const Results = (props) => (
     propertyIds={propertyStore.results} 
     title='Results' 
     hoverContent={<div>Save</div>}
-    onClick={(id) => console.log(id)}
+    onClick={(id) => propertyStore.save(id)}
   />
 );
 

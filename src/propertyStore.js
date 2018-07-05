@@ -16,6 +16,11 @@ const propertyStore = store({
 
     propertyStore.results = data.results.map(p => p.id);
     propertyStore.saved = data.saved.map(p => p.id);
+  },
+
+  save(id) {
+    if(propertyStore.saved.includes(id)) return;
+    propertyStore.saved.push(id);
   }
 });
 

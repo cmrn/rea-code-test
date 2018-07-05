@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { view } from 'react-easy-state';
 import Property from '../containers/Property';
 import './PropertyList.css';
 
@@ -22,4 +23,4 @@ PropertyList.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default PropertyList;
+export default view(PropertyList);
