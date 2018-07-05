@@ -1,16 +1,14 @@
 import React from 'react';
 import { view } from 'react-easy-state';
-import PropertyList from '../components/PropertyList';
+import Results from '../components/Results';
 import propertyStore from '../propertyStore';
 
-const Results = (props) => (
-  <PropertyList 
+const ResultsContainer = (props) => (
+  <Results 
     {...props} 
-    propertyIds={propertyStore.results} 
-    title='Results' 
-    hoverContent={<div>Save</div>}
+    propertyIds={propertyStore.results}
     onClick={(id) => propertyStore.save(id)}
   />
 );
 
-export default view(Results);
+export default view(ResultsContainer);
