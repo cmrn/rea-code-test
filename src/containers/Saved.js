@@ -8,6 +8,8 @@ const Saved = (props) => (
     {...props} 
     propertyIds={propertyStore.saved} 
     title='Saved Properties' 
+    hoverContent={<div>Remove</div>}
+    onClick={(id) => propertyStore.unsave(id)}
   />
 );
 

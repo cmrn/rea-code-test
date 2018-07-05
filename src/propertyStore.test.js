@@ -55,6 +55,21 @@ describe('save', () => {
   it('does not add the ID if it is already saved', () => {
     propertyStore.saved = ['1', '2'];
     propertyStore.save('1');
-    expect(propertyStore.saved.length).toEqual(2);
+    expect(propertyStore.saved).toEqual(['1', '2']);
   })
+});
+
+describe('save', () => {
+  it('removes the ID from the saved list', () => {
+    propertyStore.saved = ['1', '2'];
+    propertyStore.unsave('1');
+    expect(propertyStore.saved[0]).toEqual('2');
+    expect(propertyStore.saved.length).toEqual(1);
+  });
+
+  it('does nothing if the ID was not in the list', () => {
+    propertyStore.saved = ['1', '2'];
+    propertyStore.unsave('3');
+    expect(propertyStore.saved).toEqual(['1', '2']);
+  });
 });

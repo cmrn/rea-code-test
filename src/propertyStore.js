@@ -21,6 +21,11 @@ const propertyStore = store({
   save(id) {
     if(propertyStore.saved.includes(id)) return;
     propertyStore.saved.push(id);
+  },
+
+  unsave(id) {
+    const index = propertyStore.saved.indexOf(id);
+    if(index != -1) propertyStore.saved.splice(index, 1);
   }
 });
 
