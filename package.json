@@ -10,6 +10,7 @@
     "normalize.css": "^8.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-easy-state": "^5.1.0",
     "react-scripts": "1.1.4",
     "react-test-renderer": "^16.4.1"
   },

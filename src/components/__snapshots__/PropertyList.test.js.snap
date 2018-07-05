@@ -13,37 +13,17 @@ exports[`with some properties renders each property 1`] = `
   <h2
     className="PropertyList-title"
   />
-  <Property
+  <PropertyContainer
+    id="1"
     key="1"
-    property={
-      Object {
-        "agency": Object {
-          "brandingColors": Object {
-            "primary": "#ffe512",
-          },
-          "logo": "http://i1.au.reastatic.net/agencylogo/XRWXMT/12/20120927204448.gif",
-        },
-        "id": "1",
-        "mainImage": "http://i2.au.reastatic.net/640x480/20bfc8668a30e8cabf045a1cd54814a9042fc715a8be683ba196898333d68cec/main.jpg",
-        "price": "$726,500",
-      }
-    }
   />
-  <Property
+  <PropertyContainer
+    id="2"
     key="2"
-    property={
-      Object {
-        "agency": Object {
-          "brandingColors": Object {
-            "primary": "#fcfa3b",
-          },
-          "logo": "http://i4.au.reastatic.net/agencylogo/BFERIC/12/20150619122858.gif",
-        },
-        "id": "2",
-        "mainImage": "http://i1.au.reastatic.net/640x480/88586227f9176f602d5c19cf06261108dbb29f03e30d1c4ce9fc2b51fb1e4bd6/main.jpg",
-        "price": "$560,520",
-      }
-    }
+  />
+  <PropertyContainer
+    id="3"
+    key="3"
   />
 </div>
 `;
