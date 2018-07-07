@@ -13,7 +13,10 @@ it('passes the results ID list from the store', async () => {
   expect(wrapper.props().propertyIds).toEqual(savedIds);
 });
 
-it('sets the title prop to Results', () => {
+it('calls unsave method when a property is clicked', () => {
+  propertyStore.unsave = jest.fn();
   const wrapper = shallow(<Saved />);
-  expect(wrapper.update().props().title).toEqual('Saved Properties');
+  expect(propertyStore.unsave.mock.calls.length).toEqual(0);
+  wrapper.simulate('click');
+  expect(propertyStore.unsave.mock.calls.length).toEqual(1);
 });

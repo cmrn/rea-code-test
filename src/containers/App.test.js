@@ -5,14 +5,8 @@ import App from './App';
 import propertyStore from '../propertyStore';
 
 beforeEach(() => {
-  propertyStore.counters = {};
   propertyStore.load = jest.fn();
 });
-
-const counters = {
-  asdf: {id: "asdf", title: "bob", count: 1},
-  qwer: {id: "qwer", title: "steve", count: -1},
-};
 
 basicComponentTests(<App />);
 

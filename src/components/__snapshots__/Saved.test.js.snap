@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sets title and hover content as expected 1`] = `
+<PropertyList
+  hoverContent={
+    <div
+      className="Results-hover"
+    >
+      <MdClear
+        className="Results-hover-icon"
+      />
+      <div>
+        Remove
+      </div>
+    </div>
+  }
+  propertyIds={Array []}
+  title="Saved Properties"
+/>
+`;
