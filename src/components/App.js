@@ -1,5 +1,6 @@
 import React from 'react';
 import cnames from 'classnames';
+import PropTypes from 'prop-types';
 import Results from '../containers/Results';
 import Saved from '../containers/Saved';
 import './App.css';
@@ -10,5 +11,9 @@ const App = ({className, ...props}) => (
     <Saved />
   </div>
 );
+
+App.propTypes = {
+  className: PropTypes.string
+}
 
 export default App;

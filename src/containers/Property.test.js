@@ -6,8 +6,28 @@ import propertyStore from '../propertyStore';
 
 beforeEach(() => {
   propertyStore.properties = {
-    asdf: {id: "asdf", title: "bob", count: 1},
-    qwer: {id: "qwer", title: "steve", count: -1},
+    asdf: {
+	  "id": "asdf",
+	  "price": "$726,500",
+	  "agency": {
+	      "brandingColors": {
+	          "primary": "#ffe512"
+	      },
+	      "logo": "http://i1.au.reastatic.net/agencylogo/XRWXMT/12/20120927204448.gif"
+	  },
+	  "mainImage": "http://i2.au.reastatic.net/640x480/20bfc8668a30e8cabf045a1cd54814a9042fc715a8be683ba196898333d68cec/main.jpg"
+	},
+    qwer: {
+	  "id": "qwer",
+	  "price": "$726,500",
+	  "agency": {
+	      "brandingColors": {
+	          "primary": "#ffe512"
+	      },
+	      "logo": "http://i1.au.reastatic.net/agencylogo/XRWXMT/12/20120927204448.gif"
+	  },
+	  "mainImage": "http://i2.au.reastatic.net/640x480/20bfc8668a30e8cabf045a1cd54814a9042fc715a8be683ba196898333d68cec/main.jpg"
+	},
   };
 });
 

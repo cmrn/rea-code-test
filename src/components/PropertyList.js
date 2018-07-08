@@ -22,6 +22,9 @@ const PropertyList = ({propertyIds, title, hoverContent, onClick, className, ...
 PropertyList.propTypes = {
   propertyIds: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
+  hoverContent: PropTypes.element,
+  onClick: PropTypes.func,
+  className: PropTypes.string
 };
 
 export default view(PropertyList);

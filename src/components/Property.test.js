@@ -28,7 +28,7 @@ it('renders the property with image, agency, and price', () => {
 
 describe('when hover content is provided', () => {
   it('renders the hover div with content', () => {
-    const wrapper = shallow(<Property {...dummyProps}  hoverContent='something' />);
+    const wrapper = shallow(<Property {...dummyProps}  hoverContent={<div>something</div>} />);
     expect(wrapper.find('.Property-hover').length).toEqual(1);
     expect(wrapper.find('.Property-hover').text()).toEqual('something');
   });
@@ -36,7 +36,7 @@ describe('when hover content is provided', () => {
   describe('and a click handler is provided', () => {
     it('calls the click handler when hover is clicked', () => {
       const clickHandler = jest.fn();
-      const wrapper = shallow(<Property {...dummyProps} hoverContent='something' onClick={clickHandler} />);
+      const wrapper = shallow(<Property {...dummyProps} hoverContent={<div>something</div>} onClick={clickHandler} />);
       wrapper.find('.Property-hover').simulate('click');
       expect(clickHandler.mock.calls.length).toEqual(1);
     });
@@ -44,7 +44,7 @@ describe('when hover content is provided', () => {
 
   describe('but no click handler', () => {
     it('does not error when clicked', () => {
-      const wrapper = shallow(<Property {...dummyProps} hoverContent='something' />);
+      const wrapper = shallow(<Property {...dummyProps} hoverContent={<div>something</div>} />);
       wrapper.find('.Property-hover').simulate('click');
     });
   });
