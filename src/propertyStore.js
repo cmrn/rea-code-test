@@ -25,7 +25,7 @@ const propertyStore = store({
 
   unsave(id) {
     const index = propertyStore.saved.indexOf(id);
-    if(index != -1) propertyStore.saved.splice(index, 1);
+    if(index !== -1) propertyStore.saved.splice(index, 1);
   }
 });
 
