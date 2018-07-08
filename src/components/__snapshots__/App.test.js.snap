@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the app with Results and Saved components 1`] = `
+<div
+  className="App"
+>
+  <ResultsContainer />
+  <SavedContainer />
+</div>
+`;
