@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). For state management I introduced [`react-easy-state`](https://github.com/solkimicreb/react-easy-state) which seemed light weight and appropriate to the task.
 
 ## How to run
 Remember to do a `yarn` or `npm install` after cloning or pulling this repo.
@@ -6,13 +6,25 @@ Remember to do a `yarn` or `npm install` after cloning or pulling this repo.
 All the usual `create-react-app` scripts work here:  
 - `yarn start` - Run in development mode
 - `yarn test`  - Run tests and validate snaps
-- `yarn build` - Build a production build (pls don't use this in production)
+- `yarn build` - Build a "production" build (pls don't actually use this in production)
+
+## Notes
+- This app will not work in IE. This is because `react-easy-state` uses ES6 proxies to monitor state changes and usage, and IE does not support ES6 proxies.
+
+## Future work
+- Get additional data from API, especially alt text for a11y.
+- Responsive / mobile layout.
+- Consider moving to a more widely supported state management library.
+- Connect to a real API, persist changes back to the server.
+- Consider restructure of API schema to be more like the structure inside `propertyStore`.
+- Provide visual feedback to user if a property has already been saved and they try to save it again.
 
 ## Test instructions
 ### Specification
 You are given the following JSON object which will serve as mock backend data:
 
 ```json
+{
     "results": [{
         "price": "$726,500",
         "agency": {
